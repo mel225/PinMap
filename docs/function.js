@@ -1,6 +1,8 @@
 (function(){
   var src = document.getElementById("mel225_gmap").src;
   var data = getData(src);
+  alert('test');
+  console.log(data);
 
 function getData(url){
   var begin = url.indexOf("=") + 1;
@@ -19,7 +21,6 @@ function getData(url){
   len = pb.slice(begin).indexOf("!");
   data["ido"] = pb.substr(begin,len);
 
-  console.log(data);
   return data;
 }
 
