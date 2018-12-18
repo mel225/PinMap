@@ -3,9 +3,9 @@
     var src = document.getElementById("mel225_gmap").src;
     var data = getData(src);
     console.log(src, data);
-    Object.keys(data).map((value, index) => {
-      console.log("in map: " + index + ":" + value);
-      //document.getElementById("input_" + index).value = value;
+    Object.keys(data).map((value) => {
+      console.log("in map: " + value + ":" + data[value]);
+      //document.getElementById("input_" + value).value = data[value];
     });
   });
 }) (document)
