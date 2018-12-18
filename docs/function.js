@@ -1,8 +1,10 @@
 (function(){
-  var src = document.getElementById("mel225_gmap").src;
-  var data = getData(src);
-  alert('test');
-  console.log(data);
+  document.onload = function(){
+    var src = document.getElementById("mel225_gmap").src;
+    var data = getData(src);
+    alert('test');
+    console.log(data);
+  }
 }) (document)
 
 function getData(url){
