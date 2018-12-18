@@ -42,7 +42,7 @@ function submitGmap(){
     }
   });
 
-  if(!isReadble){
+  if(!isReadable){
     alert("数値を入力してください。");
     return false;
   }
