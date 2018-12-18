@@ -3,6 +3,7 @@
   var data = getData(src);
   alert('test');
   console.log(data);
+}) (document)
 
 function getData(url){
   var begin = url.indexOf("=") + 1;
@@ -23,5 +24,3 @@ function getData(url){
 
   return data;
 }
-
-}) (document);
