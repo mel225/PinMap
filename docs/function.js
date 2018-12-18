@@ -32,13 +32,13 @@ function getData(url){
 
 function submitGmap(){
   var isReadable = true;
-  var data = [].map.call(["syukusyaku", "keido", "ido"], function(cap){
+  var data = [];
+  [].map.call(["syukusyaku", "keido", "ido"], function(cap){
     var value = document.getElementById("input_" + cap).value;
     if(isNumber(value)){
-      return value;
+      data[cap] = value
     }else{
       isReadble = false;
-      return 0;
     }
   });
 
