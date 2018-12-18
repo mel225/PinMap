@@ -5,7 +5,7 @@
     console.log(src, data);
     Object.keys(data).map((value, index) => {
       console.log("in map: " + index + ":" + value);
-      document.getElementById("input_" + index).value = value;
+      //document.getElementById("input_" + index).value = value;
     });
   });
 }) (document)
