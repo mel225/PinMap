@@ -1,4 +1,6 @@
 (function(){
+  var src = document.getElementById("mel225_gmap").src;
+  var data = getData(src);
 
 function getData(url){
   var begin = url.indexOf("=") + 1;
