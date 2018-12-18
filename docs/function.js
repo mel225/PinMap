@@ -56,7 +56,7 @@ function createGmapUrl(data){
   var pb = "pb=!1m10!1m8!1m3";
   pb += "!1d" + data["syukusyaku"];
   pb += "!2d" + data["keido"];
-  pb += "!3d" + data["id"];
+  pb += "!3d" + data["ido"];
   pb += "!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp";
 
   return src + "?" + pb;
