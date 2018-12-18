@@ -2,8 +2,9 @@
   document.addEventListener("DOMContentLoaded", function(event){
     var src = document.getElementById("mel225_gmap").src;
     var data = getData(src);
-    alert('test');
-    console.log(data);
+    Object.keys(data).map((value, index) => {
+      document.getElementById("input_" + index).value = value;
+    });
   });
 }) (document)
 
@@ -25,4 +26,36 @@ function getData(url){
   data["ido"] = pb.substr(begin,len);
 
   return data;
+}
+
+function submitGmap(){
+  var isReadable = true;
+  var data = [].map.call(["syukusyaku", "keido", "ido"], function(cap){
+    var value = document.getElementById("input_" + cap).value;
+    if(Number.isNumber(value)){
+      return value;
+    }else{
+      isReadble = false;
+      return 0;
+    }
+  });
+
+  if(!isReadble){
+    alert("数値を入力してください。");
+    return false;
+  }
+
+  document.getElementById("mel225_gmap").src = createGmapUrl(data);
+  return true;
+}
+
+function createGmapUrl(data){
+  var src = "https://www.google.com/maps/embed";
+  var pb = "pb=!1m10!1m8!1m3";
+  pb += "!1d" + data["syukusyaku"];
+  pb += "!2d" + data["keido"];
+  pb += "!3d" + data["id"];
+  pb += "!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp";
+
+  return src + "?" + pb;
 }
