@@ -5,7 +5,7 @@
     console.log(src, data);
     Object.keys(data).map((value) => {
       console.log("in map: " + value + ":" + data[value]);
-      //document.getElementById("input_" + value).value = data[value];
+      document.getElementById("input_" + value).value = data[value];
     });
   });
 }) (document)
@@ -34,7 +34,7 @@ function submitGmap(){
   var isReadable = true;
   var data = [].map.call(["syukusyaku", "keido", "ido"], function(cap){
     var value = document.getElementById("input_" + cap).value;
-    if(Number.isNumber(value)){
+    if(isNumber(value)){
       return value;
     }else{
       isReadble = false;
@@ -60,4 +60,11 @@ function createGmapUrl(data){
   pb += "!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp";
 
   return src + "?" + pb;
+}
+
+function isNumber(x){ 
+  if( typeof(x) != 'number' && typeof(x) != 'string' )
+    return false;
+  else 
+    return (x == parseFloat(x) && isFinite(x));
 }
